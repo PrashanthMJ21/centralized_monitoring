@@ -44,7 +44,6 @@ services:
       - prometheus-init
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./prometheus/alert.rules.yml:/etc/prometheus/alert.rules.yml
       - /home/ubuntu/data-backup/prometheus:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
