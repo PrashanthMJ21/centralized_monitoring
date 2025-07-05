@@ -13,17 +13,6 @@ services:
       - "3100:3100"
     restart: unless-stopped
 
-  promtail:
-    image: grafana/promtail:latest
-    container_name: promtail
-    volumes:
-      - ./promtail/promtail-config.yml:/etc/promtail/config.yml
-      - /var/log:/var/log
-      - /home/ubuntu/data-backup/promtail:/var/lib/promtail
-    command: -config.file=/etc/promtail/config.yml
-    ports:
-      - "9080:9080"
-    restart: unless-stopped
 
   node-exporter:
     image: prom/node-exporter:latest
